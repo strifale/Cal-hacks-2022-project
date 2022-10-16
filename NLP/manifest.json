@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "NLP",
+    "description": "Comment Categorizor",
+    "version": "1.0",
+    "content_scripts": [{
+        "matches":["https://www.youtube.com/*"],
+        "css": ["main.css"],
+        "js": ["content.js"]
+    }],
+    "browser_action":{
+        "default_popup": "popup.html",
+        "default_title": "NLP"
+    },
+
+    "permissions": [
+  "http://127.0.0.1:8000/"]
+}
