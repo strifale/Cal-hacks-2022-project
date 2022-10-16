@@ -13,8 +13,11 @@ def read_sample_test():
 
 
 s = read_sample_test()
-
+toadd = []
 for i in s:
+    toadd.append(i[0])
     print("----------")
     print("our text: ", i[0])
     print("our label: ", i[1])
+
+utils.write_files("spam.txt", toadd)

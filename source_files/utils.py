@@ -28,7 +28,12 @@ def write_files(file_name, output):
     word = '/outputs/'
     new_path = curr_path[:-12] + word + file_name
     file = open(new_path, "w")
-    file.write(output)
+    if type(output) is list:
+        for i in output:
+            file.write(i)
+            file.write('\n')
+    else:
+        file.write(output)
     file.close()
 
 from cohere.classify import Example
