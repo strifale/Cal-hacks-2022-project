@@ -7,6 +7,11 @@ co = cohere.Client('{apiKey}')
 
 
 def get_inputs(samples):
+    """
+    Takes in the data that we want to classify and return a list of tuples where the first is the input, and the second is the label
+    :param samples: data that we want to classify
+    :return: List of tuples
+    """
     response = co.classify(
         model='medium',
         inputs=samples,
@@ -74,6 +79,11 @@ def get_inputs(samples):
 
 
 def writefilesfrominput(inputs):
+    """
+    Directly write to files based on inputs
+    :param inputs: The data that we want to classify
+    :return: None
+    """
     result = get_inputs(inputs)
     pos = []
     neg = []
